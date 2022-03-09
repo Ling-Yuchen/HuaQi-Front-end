@@ -1,10 +1,21 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/components/Login'
-import Home from '@/components/Home'
-import Register from '@/components/Register'
-import Search from '@/components/Search'
-import ResultPage from '@/components/ResultPage'
+import User from '@/views/User'
+import Home from '@/views/Home'
+import Login from '@/views/Login'
+import Register from '@/views/Register'
+import UserNotice from '@/views/UserNotice'
+import UserCenter from '@/views/UserCenter'
+import SearchResult from '@/views/SearchResult'
+import UserAgreement from '@/views/UserAgreement'
+import IndustryRisk from '@/components/IndustryRisk'
+import StockVolatility from '@/components/StockVolatility'
+import StockSharpeRatio from '@/components/StockSharpeRatio'
+import ExchangeRateRisk from '@/components/ExchangeRateRisk'
+import FinancialLeverage from '@/components/FinancialLeverage'
+import CompanyInformation from '@/components/CompanyInformation'
+import ManagementOrganization from '@/components/ManagementOrganization'
+import ForeignExchangeExposure from '@/components/ForeignExchangeExposure'
 
 Vue.use(Router)
 
@@ -14,6 +25,16 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/user-agreement',
+      name: 'user-agreement',
+      component: UserAgreement
+    },
+    {
+      path: '/user-notice',
+      name: 'user-notice',
+      component: UserNotice
     },
     {
       path: '/login',
@@ -26,14 +47,61 @@ export default new Router({
       component: Register
     },
     {
-      path: '/result',
-      name: 'result',
-      component: ResultPage
+      path: '/user',
+      name: 'user',
+      component: User
     },
     {
-      path: '/search',
-      name: 'search',
-      component: Search
+      path: '/user-center',
+      name: 'user-center',
+      component: UserCenter
+    },
+    {
+      path: '/search-result',
+      name: 'search-result',
+      component: SearchResult,
+      children: [
+        {
+          path: '/exchange-rate-risk',
+          name: 'exchange-rate-risk',
+          component: ExchangeRateRisk
+        },
+        {
+          path: '/financial-leverage',
+          name: 'financial-leverage',
+          component: FinancialLeverage
+        },
+        {
+          path: '/foreign-exchange-exposure',
+          name: 'foreign-exchange-exposure',
+          component: ForeignExchangeExposure
+        },
+        {
+          path: '/management-organization',
+          name: 'management-organization',
+          component: ManagementOrganization
+        },
+        {
+          path: '/stock-volatility',
+          name: 'stock-volatility',
+          component: StockVolatility
+        },
+        {
+          path: '/stock-sharpe-ratio',
+          name: 'stock-sharpe-ratio',
+          component: StockSharpeRatio
+        },
+        {
+          path: '/industry-risk',
+          name: 'industry-risk',
+          component: IndustryRisk
+        },
+        {
+          path: '/company-information',
+          name: 'company-information',
+          component: CompanyInformation
+        }
+      ]
     }
   ]
 })
