@@ -4,18 +4,20 @@ import User from '@/views/User'
 import Home from '@/views/Home'
 import Login from '@/views/Login'
 import Register from '@/views/Register'
+import MacroData from '@/views/MacroData'
 import UserNotice from '@/views/UserNotice'
 import UserCenter from '@/views/UserCenter'
 import SearchResult from '@/views/SearchResult'
 import UserAgreement from '@/views/UserAgreement'
-import IndustryRisk from '@/components/IndustryRisk'
-import StockVolatility from '@/components/StockVolatility'
-import StockSharpeRatio from '@/components/StockSharpeRatio'
-import ExchangeRateRisk from '@/components/ExchangeRateRisk'
-import FinancialLeverage from '@/components/FinancialLeverage'
-import CompanyInformation from '@/components/CompanyInformation'
-import ManagementOrganization from '@/components/ManagementOrganization'
-import ForeignExchangeExposure from '@/components/ForeignExchangeExposure'
+import IndustryRisk from '@/components/charts/IndustryRisk'
+import StockVolatility from '@/components/charts/StockVolatility'
+import StockSharpeRatio from '@/components/charts/StockSharpeRatio'
+import ExchangeRateRisk from '@/components/charts/ExchangeRateRisk'
+import FinancialLeverage from '@/components/charts/FinancialLeverage'
+import CompanyInformation from '@/components/charts/CompanyInformation'
+import ManagementOrganization from '@/components/charts/ManagementOrganization'
+import ForeignExchangeExposure from '@/components/charts/ForeignExchangeExposure'
+import Search from '@/views/Search'
 
 Vue.use(Router)
 
@@ -47,6 +49,11 @@ export default new Router({
       component: Register
     },
     {
+      path: '/search',
+      name: 'search',
+      component: Search
+    },
+    {
       path: '/user',
       name: 'user',
       component: User
@@ -55,6 +62,11 @@ export default new Router({
       path: '/user-center',
       name: 'user-center',
       component: UserCenter
+    },
+    {
+      path: '/macro-data',
+      name: 'macro-data',
+      component: MacroData
     },
     {
       path: '/search-result',

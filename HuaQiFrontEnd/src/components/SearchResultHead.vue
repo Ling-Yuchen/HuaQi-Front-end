@@ -10,6 +10,11 @@
       返回
     </span>
     <span class="search-result">搜索结果</span>
+    <span
+      class="yesClientele"
+      @click="goBack">
+      <i>Yes, clientele</i>
+    </span>
   </div>
 </template>
 
@@ -50,5 +55,15 @@ export default {
   padding-left: 15px;
   font-size: 20px;
   letter-spacing: 1px;
+}
+.yesClientele {
+  float: right;
+  margin-right: 30px;
+  color: #ffbb00;
+  font-size: 25px;
+  font-family: fantasy;
+}
+.yesClientele:hover {
+  cursor: pointer;
 }
 </style>

@@ -5,8 +5,8 @@ import axios from 'axios'
 import Vuex from 'vuex'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import echarts from 'echarts'
 import store from './storage/index.js'
+import * as echarts from 'echarts'
 
 Vue.use(ElementUI)
 Vue.use(Vuex)

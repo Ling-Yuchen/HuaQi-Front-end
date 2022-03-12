@@ -120,34 +120,35 @@ export default {
     onSubmit () {
       this.$refs['registerForm'].validate((valid) => {
         if (valid) {
-          this.$message({
-            message: '注册成功',
-            type: 'success'
-          })
-          setTimeout(this.backToLogin(), 3000)
-          // this.axios({
-          //   method: 'post',
-          //   url: '服务器地址/register',
-          //   headers: { 'content-type': 'application/x-www-form-urlencoded' },
-          //   data: {
-          //     name: this.registerForm.name,
-          //     email: this.registerForm.email,
-          //     pass: this.registerForm.pass
-          //   }
-          // }).then((response) => {
-          //   this.$message({
-          //     message: '注册成功',
-          //     type: 'success'
-          //   })
-          //   setTimeout(this.backToLogin(), 3000)
-          // }).catch((error) => {
-          //   this.$message({
-          //     showClose: true,
-          //     message: '注册失败',
-          //     type: 'error'
-          //   })
-          //   console.log(error)
+          // this.$message({
+          //   message: '注册成功',
+          //   type: 'success'
           // })
+          // setTimeout(this.backToLogin(), 3000)
+          this.axios({
+            method: 'post',
+            url: 'http://127.0.0.1:5000/register',
+            headers: { 'content-type': 'application/x-www-form-urlencoded' },
+            data: {
+              name: this.registerForm.name,
+              email: this.registerForm.email,
+              pass: this.registerForm.pass
+            }
+          }).then((response) => {
+            alert(response)
+            this.$message({
+              message: '注册成功',
+              type: 'success'
+            })
+            // setTimeout(this.backToLogin(), 3000)
+          }).catch((error) => {
+            this.$message({
+              showClose: true,
+              message: '注册失败',
+              type: 'error'
+            })
+            console.log(error)
+          })
         } else {
           this.$message({
             showClose: true,
